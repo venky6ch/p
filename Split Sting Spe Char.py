@@ -14,3 +14,9 @@ for i in range(len(index_list)):
         final_list.append(Iam[index_list[i - 1] + 1 : index_list[i]].strip())
 final_list.append(Iam[index_list[i] + 1 : len(Iam)])
 final_list
+
+
+# Remove letters from  String
+
+
+# Remove all duplicates from string

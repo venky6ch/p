@@ -10,6 +10,6 @@ def common_letters():
 common_letters()
 
 
-import sys
+# import sys
 
-print(sys.getsizeof("hello"))  # Returns size in bytes
+# print(sys.getsizeof("hello"))  # Returns size in bytes

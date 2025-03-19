@@ -13,3 +13,9 @@ for i in range(len(mylist1)):
             count1[i] += 1
     mydict5[mylist1[i]] = count1[i]
 print(mydict5)
+
+
+from collections import Counter
+
+text = "hello world"
+print(Counter(text))  # Count occurrences of each letter

@@ -8,3 +8,8 @@ def common_letters():
 
 
 common_letters()
+
+
+import sys
+
+print(sys.getsizeof("hello"))  # Returns size in bytes

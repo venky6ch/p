@@ -12,12 +12,40 @@ def insert_in_sorted_array(arr, element):
 
 
 # Example usage
-arr = [3, 6, 8, 12, 15]
-element = 7
+arr = list(
+    map(int, input("Enter space-separated integers: ").split())
+)  # [3, 6, 8, 12, 15]
+element = int(input("Enter the Number: "))  # 7
 result = insert_in_sorted_array(arr, element)
 print("Array after insertion:", result)
 
+"""
+In Python, an array is typically implemented using the array module, 
+while a list is the built-in dynamic data structure that can hold heterogeneous elements. 
+Since you're using standard list operations like slicing (arr[:i] + [element] + arr[i:]) and the append operation,
+this is a list-based implementation, not an actual array.
 
+"""
+# If you need an array, you can use the array module like this:
+
+import array
+
+
+def insert_in_sorted_array(arr, element):
+    for i in range(len(arr)):
+        if arr[i] > element:
+            return arr[:i] + array.array(arr.typecode, [element]) + arr[i:]
+    return arr + array.array(arr.typecode, [element])
+
+
+# Example usage
+arr = array.array("i", [3, 6, 8, 12, 15])  # 'i' denotes an array of integers
+element = int(input("Enter the Number: "))  # Example: 7
+result = insert_in_sorted_array(arr, element)
+print("Array after insertion:", list(result))  # Convert to list for display
+
+
+# -----------------------------------------------------------------
 # Array finding the length of increasing subsequence
 def longest_increasing_subsequence(arr):
     from bisect import bisect_left
@@ -45,6 +73,8 @@ print(
 )
 
 
+# -------------------------------------------------------------
+# Merged and sorted array
 def merge_and_sort_arrays(arr1, arr2):
     # Combine both arrays
     merged_array = arr1 + arr2

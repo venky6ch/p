@@ -1,3 +1,4 @@
+# ----------------------------------------------------------
 #   Array vs List
 import array
 # import numpy as np
@@ -15,6 +16,7 @@ print(type(my_list))
 print(isinstance(my_list, list))
 
 
+# -----------------------------------------------------------
 # Transpose Matrix
 """
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -30,6 +32,8 @@ print(columns)
 print(columns2)
 """
 
+
+# -------------------------------------------------------
 # 2 Sum problem
 """
 nums = list(map(int, input("Enter space-separated integers: ").split()))
@@ -38,3 +42,20 @@ for num in enumerate(nums):
     print(num)
 
 """
+
+# -------------------------------------------------
+# Print documentation string
+
+
+# Even odd test
+def even_odd(num):
+    """This function will check whether a number is even or odd"""
+    if num % 2 == 0:
+        print(num, " is even number")
+    else:
+        print(num, " is odd number")
+
+
+even_odd(3)
+even_odd(4)
+print(even_odd.__doc__)  # Print function documentation string

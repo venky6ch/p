@@ -1,22 +1,27 @@
-# Matching 2 Letters
+# Matching Letters in 2 Strings
 def common_letters():
     str1 = input("Enter first string: ")
     str2 = input("Enter second string: ")
     s1 = set(str1)
+    print(s1)
     s2 = set(str2)
+    print(s2)
     lst = s1 & s2
     print(lst)
+    lst2 = s1 and s2
+    print(lst2)
 
 
 common_letters()
 
 
-# import sys
+import sys
 
-# print(sys.getsizeof("hello"))  # Returns size in bytes
+print(sys.getsizeof("hello"))  # Returns size in bytes
 
 
 # one string is a rotation of another
+# --------------------------------------------------
 def is_rotation(s1, s2):
     # Check if lengths are equal
     if len(s1) != len(s2):
@@ -38,18 +43,6 @@ if is_rotation(s1, s2):
     print("Yes, the second string is a valid rotation of the first string.")
 else:
     print("No, the second string is not a valid rotation of the first string.")
-
-
-# Reverse Number
-# take input of the number here
-n = int(input())
-
-# write code to reverse the number here
-r = 0
-while n > 0:
-    r = r * 10 + n % 10
-    n = n // 10
-print(r)
 
 
 # Reverse sentence
@@ -90,12 +83,18 @@ final_list.append(Iam[index_list[i] + 1 : len(Iam)])
 final_list
 
 
-# Remove letters from  String
-
-
 # Remove all duplicates from string
+def remove_dup():
+    remv = input("enter string: ")
+    set11 = set(remv)
+    # print(dir(set11))
+    print("".join(set11))
 
 
+remove_dup()
+
+
+# Remove letters from  String
 def removeChars(arr, string):
     # store characters of arr in a hash table
     hashTable = {}
@@ -114,24 +113,6 @@ def removeChars(arr, string):
 print(removeChars(["h", "e", "w", "o"], "hello world"))  # => "ll rld"
 
 
-# Split String at special character loc
-Iam = "I,am!currently$ enrolled%in,data!science ^ course^Conducted  @UpGrad@IITB^Banglore^Karnataka"
-spec_char = "@[_!#$%^&*()<>?/|,}{~:]"
-index_list = []
-for i in range(len(Iam)):
-    if Iam[i] in spec_char:
-        index_list.append(i)
-final_list = []
-
-for i in range(len(index_list)):
-    if i < 1:
-        final_list.append(Iam[0 : index_list[i]].strip())
-    else:
-        final_list.append(Iam[index_list[i - 1] + 1 : index_list[i]].strip())
-final_list.append(Iam[index_list[i] + 1 : len(Iam)])
-final_list
-
-
 # Vowel Test
 vowels = "AaEeIiOoUu"
 input_str = input("Enter String: ")
@@ -141,8 +122,8 @@ else:
     print("NO")
 
 
-# Repeat 123a!
-
+# Repeat 123a!        --     112233aa!!
+# ----------------------------
 string = "123a!"
 
 
@@ -182,3 +163,18 @@ from collections import Counter
 
 text = "hello world"
 print(Counter(text))  # Count occurrences of each letter
+
+
+#  Without using the built-in reverse a string
+def reverse_string(s):
+    reversed_s = ""
+    for char in s:
+        reversed_s = (
+            char + reversed_s
+        )  # Prepend each character to build the reversed string
+    return reversed_s
+
+
+# Example usage:
+s = input("Enter a string: ")
+print("Reversed string:", reverse_string(s))
